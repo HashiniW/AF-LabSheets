@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var Hello = function () {
+        console.log("Hello World!");
+    }
+
+    function secondFunction(print) {
+        print();
+    }
+
+    secondFunction(Hello);
+//OR this way
+    function printHello() {
+        console.log("Hello World!");
+    }
+
+    function callee(print) {
+        print();
+    }
+
+    callee(printHello);
+</script>
+</body>
+</html>
