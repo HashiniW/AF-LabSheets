@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="">
+
+</div>
+<script>
+
+    function getUsers() {
+        return fetch('https://api.github.com/users').then(response => {
+            return response.json()
+        })
+        .then(data => {
+            return data
+        })
+    }
+
+    async function main() {
+        let users = await getUsers()
+        console.log(users)
+    }
+
+    main()
+</script>
+
 </body>
 </html>

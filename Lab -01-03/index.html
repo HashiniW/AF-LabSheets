@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    vehicleName = "Audi";
+
+    function printVehicleName() {
+        console.log(this.vehicleName);
+        console.log(window===this);
+    }
+
+    // let Vehicle = {
+    //     vehicleName: "Land Rover",
+    //     getVehicleName: printVehicleName
+    // };
+
+    // let Vehicle = {
+    //     vehicleName: "Land Rover",
+    //     getVehicleName: () => {
+    //         printVehicleName()
+    //     }
+    // };
+
+    let Vehicle = {
+        vehicleName: "Land Rover",
+        getVehicleName: function() {
+            printVehicleName()
+        }
+    };
+
+    printVehicleName();
+    Vehicle.getVehicleName();
+
+</script>
+</body>
+</html>
