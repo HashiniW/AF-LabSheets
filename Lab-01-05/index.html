@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<script>
+<script type="text/javascript">
 
     function githubAPI(callback){
         $.getJSON("https://api.github.com/users", callback);
@@ -13,7 +13,7 @@
     
     function callback(data){
         data.forEach(element => {
-            if(element.id == 1){ 
+            if(element.id == 1){ //getting the first user only
                 console.log(element)
             }
         });
