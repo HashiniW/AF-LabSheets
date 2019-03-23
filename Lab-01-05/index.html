@@ -5,26 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<div id="">
-
-</div>
 <script>
 
-    function getUsers() {
-        return fetch('https://api.github.com/users').then(response => {
-            return response.json()
-        })
-        .then(data => {
-            return data
-        })
+    function githubAPI(callback){
+        $.getJSON("https://api.github.com/users", callback);
     }
-
-    async function main() {
-        let users = await getUsers()
-        console.log(users)
+    
+    function callback(data){
+        data.forEach(element => {
+            if(element.id == 1){ 
+                console.log(element)
+            }
+        });
     }
-
-    main()
+    
+    githubAPI(callback);
 
 </script>
 </body>
