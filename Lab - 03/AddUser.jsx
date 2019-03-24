@@ -1,16 +1,14 @@
-'use strict';
-
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 
-export default class AddUser extends Component{
-    static get propTypes() {
-        return {
+export default class AddUser extends Component {
+    static get propTypes(){
+        return{
             addUser: PropTypes.func
         }
     }
 
-    constructor(props) {
+    constructor(props){
         super(props);
     }
 
@@ -23,7 +21,6 @@ export default class AddUser extends Component{
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
-
         if(this.name) {
             this.props.addUser({name: this.name});
             this.name = '';
@@ -33,9 +30,8 @@ export default class AddUser extends Component{
     render() {
         return <div>
             <form onSubmit={event => this.onSubmit(event)}>
-                <label>Name: <td> </td></label>
-                <input type="text" onChange={event =>
-                    this.onNameChange(event)}/>
+                <label>Name:</label>
+                <input type="text" onChange={event => this.onNameChange(event)}/>
                 <button type="submit">Add</button>
             </form>
         </div>

@@ -1,5 +1,3 @@
-'use strict';
-
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import User from './User.jsx';
@@ -21,7 +19,7 @@ export default class Users extends Component{
             <table>
                 <thead>
                 <tr>
-                    <th>ID</th><td> </td><td> </td>
+                    <th>ID</th>
                     <th>Name</th>
                 </tr>
                 </thead>
@@ -29,7 +27,7 @@ export default class Users extends Component{
                 {
                     users.map(user => {
                         return <User key={user.id} user={user}/>
-                        })
+                    })
                 }
                 </tbody>
             </table>
